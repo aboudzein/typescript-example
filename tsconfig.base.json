@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@typescript-example/library": ["packages/library/src/index.ts"]
+      "@typescript-example/api": ["packages/api/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
