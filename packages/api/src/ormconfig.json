@@ -1,0 +1,12 @@
+[
+    {
+      "type": "postgres",
+      "host": "localhost",
+      "port": 52313,
+      "username": "postgres",
+      "password": "mysecretpassword",
+      "database": "test-typescript-example",
+      "synchronize": true,
+      "logging": false
+    }
+  ]

@@ -1,8 +1,10 @@
 import * as Koa from 'koa';
 import * as HttpStatus from 'http-status-codes';
-
+import exampleController from '../example/example.controller';
+import * as bodyParser from 'koa-bodyparser';
 const app:Koa = new Koa();
 
+app.use(bodyParser());
 // Generic error handling middleware.
 app.use(async (ctx: Koa.Context, next: () => Promise<any>) => {
   try {
@@ -14,6 +16,9 @@ app.use(async (ctx: Koa.Context, next: () => Promise<any>) => {
     ctx.app.emit('error', error, ctx);
   }
 });
+
+app.use(exampleController.routes());
+app.use(exampleController.allowedMethods());
 
 // Initial route
 app.use(async (ctx:Koa.Context) => {
